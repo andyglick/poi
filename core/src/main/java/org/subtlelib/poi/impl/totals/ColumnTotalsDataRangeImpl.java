@@ -1,11 +1,11 @@
 package org.subtlelib.poi.impl.totals;
 
-import static com.google.common.base.Preconditions.checkState;
-
 import org.subtlelib.poi.api.totals.ColumnTotalsDataRange;
 import org.subtlelib.poi.impl.sheet.SheetContextImpl;
 
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
+
+import static com.google.common.base.Preconditions.checkState;
 
 /**
  * Created on 28/03/13
@@ -14,7 +14,7 @@ import com.google.common.base.Objects;
  */
 public class ColumnTotalsDataRangeImpl implements ColumnTotalsDataRange {
 
-    private final static int NOT_SET = -1;
+    private static final int NOT_SET = -1;
 
     private final SheetContextImpl sheetContext;
     private final int startRowNo;
@@ -65,10 +65,10 @@ public class ColumnTotalsDataRangeImpl implements ColumnTotalsDataRange {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this)
-                .add("startRow", startRowNo)
-                .add("endRow", endRowNo)
-                .add("isEndMarked", isEndMarked())
-                .toString();
+        return MoreObjects.toStringHelper(this)
+          .add("startRow", startRowNo)
+          .add("endRow", endRowNo)
+          .add("isEndMarked", isEndMarked())
+          .toString();
     }
 }
